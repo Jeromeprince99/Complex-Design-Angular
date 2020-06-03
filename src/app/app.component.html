@@ -1,21 +1,319 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
-<router-outlet></router-outlet>
+<div class="nav-bar">
+  <div class="left-nav">
+    <div class="logo">
+      Complex Design
+    </div>
+    <div class="search-bar">
+      <span>
+        <input type="search" placeholder="Search" style="height: 29px;width:500px;">
+        <div class="search-wrapper">
+          <i class="fa fa-search" style="color:grey;"></i>
+        </div>
+      </span>
+    </div>
+  </div>
+  <div class="right-nav">
+    <div class="notifications-wrapper" (clickOutside)="close()" (click)="open()">
+      <i class="fa fa-bell"></i> 
+      <span *ngIf='displayNotif' class="unread-msg-no-placeholder">
+          {{notifno}}
+      </span>     
+    </div>
+    <div class="notification-box-wrapper" *ngIf='display'>
+      <div *ngFor='let item of notifdata' class="notification-box" >
+       <div class="item">
+        <div class="icon">
+          <img src="../assets/cartoon5.png">
+        </div>
+        <div class="message">
+          <div class="content">
+            {{item.data}}
+          </div>
+          <div class="timestamp">
+            {{item.number}} hrs ago
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="profile-wrapper">
+      <span class="profile-placeholder">
+        J
+      </span>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="left-section">
+    <div class="profile-photo-plus-name">
+      <div class="profile-photo">
+        <i class="fa fa-user"></i>
+      </div>
+      <div class="profile-name">
+        Good name
+      </div>
+    </div>
+    <div class="feature-container">
+      <div class="feature-heading">
+        FAVOURITES
+      </div>
+      <div class="feature-list">
+        <div class="list-item">
+          <div class="item-icon">
+            <i style="color: grey;" class="far fa-newspaper"></i>
+          </div>
+          <div class="item-name">
+            News Feed
+          </div>
+          <div class="item-option">
+             <i class="fas fa-ellipsis-h"></i>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="item-icon">
+           <i style="color: cadetblue;" class="fas fa-comments"></i>
+          </div>
+          <div class="item-name">
+            Messages
+          </div>
+          <div class="item-option">
+            <i class="fas fa-ellipsis-h"></i>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="item-icon">
+            <i style="color: brown;" class="fas fa-calendar-alt"></i>
+          </div>
+          <div class="item-name">
+            Events
+          </div>
+          <div class="item-option">
+            <i class="fas fa-ellipsis-h"></i>
+          </div>
+        </div>
+         <div class="list-item">
+          <div class="item-icon">
+            <i  style="color: cornflowerblue;" class="fas fa-user-friends"></i>
+          </div>
+          <div class="item-name">
+            Find Friends
+          </div>
+          <div class="item-option">
+             <i class="fas fa-ellipsis-h"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="feature-container">
+      <div class="feature-heading">
+        LISTS
+      </div>
+      <div class="feature-list">
+        <div class="list-item">
+          <div class="item-icon">
+            <i  style="color: cornflowerblue;" class="fas fa-user-friends"></i>
+          </div>
+          <div class="item-name">
+            Close Friends
+          </div>
+          <div class="item-option">
+             <i class="fas fa-ellipsis-h"></i>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="item-icon">
+           <i style="color: midnightblue;" class="fas fa-home"></i>
+          </div>
+          <div class="item-name">
+            Family
+          </div>
+          <div class="item-option">
+             <i class="fas fa-ellipsis-h"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="feature-container">
+      <div class="feature-heading">
+        APPS
+      </div>
+      <div class="feature-list">
+        <div class="list-item">
+          <div class="item-icon">
+            <i  style="color: cornflowerblue;" class="fab fa-empire"></i>
+          </div>
+          <div class="item-name">
+            Empires and Allies
+          </div>  
+           <div class="item-option">
+             <i class="fas fa-ellipsis-h"></i>
+          </div>       
+        </div>
+        <div class="list-item">
+          <div class="item-icon">
+           <i style="color: bisque;" class="fas fa-puzzle-piece"></i>
+          </div>
+          <div class="item-name">
+            Games Requests
+          </div>
+           <div class="item-option">
+             <i class="fas fa-ellipsis-h"></i>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="item-icon">
+           <i class="fab fa-medapps"></i>
+          </div>
+          <div class="item-name">
+            Apps Requests
+          </div>
+          <div class="item-option">
+             <i class="fas fa-ellipsis-h"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="middle-live-story-section">
+    <div style="margin:0px auto;width: fit-content;">
+      <div style="position:absolute;" (click)="newstory()" *ngIf='displaynewstorybtn'>
+        <div class="new-story-button" ><i style="padding:2px 8px 0px 8px; line-height:inherit;" class="fa fa-refresh" aria-hidden="true"></i> New Stories</div>
+      </div>
+    </div>
+    <div class="create-post-container">
+      <div class="header">
+        Create Post
+      </div>
+      <div class="body">
+        <div class="profile-photo">
+          <i class="fa fa-user"></i>
+        </div>
+        <div class="writing-space-area">
+          <textarea required (change)="doTextareaValueChange($event)" class="textarea" rows = "5" cols = "50" name = "post-comment" placeholder="Write something here..."></textarea>
+        </div>
+      </div>
+      <div class="footer-options" >
+        <div class="option" (click)="fileInput.click()">
+           <input  style="display: none" type="file" accept="image/*" (change)="handleFileInput($event.target.files)" #fileInput>
+          <div class="option-icon">
+            <i style="color: crimson;" class="fas fa-image"></i>
+          </div>
+          <div class="option-name">
+            Image
+          </div>
+        </div>
+        <div class="option" (click)=openDialog($event)>
+          <div class="option-icon">
+            <i style="color: crimson;" class="fab fa-youtube"></i>
+          </div>
+          <div class="option-name">
+            Video
+          </div>
+        </div>
+        <div class="option">
+          <div class="option-icon">
+            <i  style="color: cornflowerblue;" class="fas fa-user-friends"></i>
+          </div>
+          <div class="option-name">
+            Tag Friends
+          </div>
+        </div>
+        <div class="option">
+          <div class="option-icon">
+              <i style="color:grey;" class="fas fa-ellipsis-h"></i>
+          </div>
+        </div>
+        <div class="post-button" (click)="createStory()">
+          Submit
+        </div>
+      </div>
+    </div>
+    <div class="story-container">      
+      <div *ngFor='let story of storydata' class="story-list">
+        
+        <div class="story">
+          <div class="header">
+            <div class="profile-photo">
+              <i class="fa fa-user"></i>
+            </div>
+            <div class="name-and-time-placeholder">
+              <div class="profile-name">
+                {{story.profile_name}}
+              </div>
+              <div *ngIf='!story.profile_name'  class="profile-name">
+                Dynamic
+              </div>
+              <div class="time-stamp">
+                Created on {{story.time | date :'EEEE, MMMM d, y, h:mm:ss a':'IST' }} 
+              </div>
+            </div>
+            <div class="story-option">
+              <div class="option-icon">   
+                <ng-template #popContent><span style="cursor:pointer;" (click)="deletePost(story)" >Delete</span> </ng-template>               
+                <i [ngbPopover]="popContent" [popoverTitle]="" style="color:grey;" class="fas fa-ellipsis-h"></i>              
+              </div>
+            </div>   
+          </div>
+          <div class="body">
+            {{story.content}}
+          </div>
+          <div *ngIf='story.image' class="image-space-area">
+            <img src="{{story.image}}" alt="foldable-phone">
+          </div>
+          <div *ngIf='story.video' class="image-space-area">     
+            <div  [innerHTML]="story.video | sanitizeHtml" class="video">                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right-section">
+    <div class="story-option-container">
+      <div class="header">
+        Stories
+      </div>
+      <div class="story-item">
+        <div class="icon">
+          <img src="../assets/icon-1.png">
+        </div>
+        <div class="content">        
+          <div class="item-title">
+            Craft World Kashmir
+          </div>
+          <div class="item-content">
+            about a minute ago
+          </div>
+        </div>
+      </div>     
+      <div class="story-item">
+        <div class="icon">
+          <img src="../assets/iocn-2.png">
+        </div>
+        <div class="content">        
+          <div class="item-title">
+            Little Black Hijab
+          </div>
+          <div class="item-content">
+            about an hour ago
+          </div>
+        </div>
+      </div>    
+      <div class="story-item">
+        <div class="icon">
+          <img src="../assets/icon-3.png">
+        </div>
+        <div class="content">        
+          <div class="item-title">
+            Goodness thoughts
+          </div>
+          <div class="item-content">
+            5 hours ago
+          </div>
+        </div>
+      </div>     
+    </div> 
+  </div>
+</div>

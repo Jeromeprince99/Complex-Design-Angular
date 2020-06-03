@@ -1,0 +1,14 @@
+<span style="word-break: break-word;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+    display: block;"> Copy and paste the 'embed video code' here from youtube below</span>
+<textarea style="width: 100%;
+    margin-bottom: 20px;
+    font-size: 18px;" (change)="enterEmbedCode($event)" class="textarea" rows = "6" cols = "30" name = "Embed Code">{{embedCode}}</textarea>
+<button  style="    border: none;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    display: block;
+    float: right;cursor:pointer;" [mat-dialog-close]="embedCode" (click)="submit()"> Submit </button>

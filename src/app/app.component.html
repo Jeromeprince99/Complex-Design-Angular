@@ -4,9 +4,12 @@
     <div class="logo">
       Complex Design
     </div>
+    <div class="logo-sm">
+      CD
+    </div>
     <div class="search-bar">
       <span>
-        <input type="search" placeholder="Search" style="height: 29px;width:500px;">
+        <input type="search" placeholder="Search" style="max-width: 500px; padding-left: 8px;border:none; border-radius: 2px 0px 0px 2px;">
         <div class="search-wrapper">
           <i class="fa fa-search" style="color:grey;"></i>
         </div>
@@ -14,13 +17,29 @@
     </div>
   </div>
   <div class="right-nav">
+    <div class="enable-socket-btn-wrapper" (click)="socketToggle()">
+      <div class="enable-socket-btn">
+        <div *ngIf="!socketToggleBool" class="enable-socket socket-large"  >
+          Enable WebSocket
+        </div>
+        <div *ngIf="socketToggleBool" class="disable-socket socket-large" >
+          Disable WebSocket
+        </div>
+        <div *ngIf="!socketToggleBool" class="enable-socket socket-short" style="display:none;">
+          Try
+        </div>
+        <div *ngIf="socketToggleBool" class="disable-socket socket-short" style="display:none;">
+          Stop
+        </div>
+      </div>      
+    </div>
     <div class="notifications-wrapper" (clickOutside)="close()" (click)="open()">
       <i class="fa fa-bell"></i> 
-      <span *ngIf='displayNotif' class="unread-msg-no-placeholder">
+      <span *ngIf='displayNotif && socketToggleBool && notifno'  class="unread-msg-no-placeholder">
           {{notifno}}
       </span>     
     </div>
-    <div class="notification-box-wrapper" *ngIf='display'>
+    <div class="notification-box-wrapper" *ngIf='display && socketToggleBool'>
       <div *ngFor='let item of notifdata' class="notification-box" >
        <div class="item">
         <div class="icon">
@@ -177,9 +196,9 @@
 
   </div>
   <div class="middle-live-story-section">
-    <div style="margin:0px auto;width: fit-content;">
+    <div style="margin:0px auto;width: fit-content;width: -moz-fit-content;">
       <div style="position:absolute;" (click)="newstory()" *ngIf='displaynewstorybtn'>
-        <div class="new-story-button" ><i style="padding:2px 8px 0px 8px; line-height:inherit;" class="fa fa-refresh" aria-hidden="true"></i> New Stories</div>
+        <div *ngIf="socketToggleBool" class="new-story-button" ><i style="padding:2px 8px 0px 8px; line-height:inherit;" class="fa fa-spinner fa-spin" aria-hidden="true"></i> New Stories</div>
       </div>
     </div>
     <div class="create-post-container">
@@ -195,18 +214,24 @@
         </div>
       </div>
       <div class="footer-options" >
-        <div class="option" (click)="fileInput.click()">
+        <div class="option ophover" (click)="fileInput.click()">
            <input  style="display: none" type="file" accept="image/*" (change)="handleFileInput($event.target.files)" #fileInput>
-          <div class="option-icon">
+          <div *ngIf="!file" class="option-icon">
             <i style="color: crimson;" class="fas fa-image"></i>
+          </div>
+          <div *ngIf="file" class="option-icon">
+            <i style="color: green;" class="fas fa-check"></i>  
           </div>
           <div class="option-name">
             Image
           </div>
         </div>
-        <div class="option" (click)=openDialog($event)>
-          <div class="option-icon">
+        <div class="option ophover" (click)=openDialog($event)>
+          <div *ngIf="!embedCode" class="option-icon">
             <i style="color: crimson;" class="fab fa-youtube"></i>
+          </div>
+          <div *ngIf="embedCode" class="option-icon">
+            <i style="color: green;" class="fas fa-check"></i>  
           </div>
           <div class="option-name">
             Video
@@ -246,12 +271,17 @@
                 Dynamic
               </div>
               <div class="time-stamp">
-                Created on {{story.time | date :'EEEE, MMMM d, y, h:mm:ss a':'IST' }} 
+                <span *ngIf="story.profile_name">  
+                  Created at {{story.time}} before
+                </span>
+                <span *ngIf="!story.profile_name">
+                  Created on {{story.time | date :'EEEE, MMMM d, y, h:mm:ss a':'IST' }} 
+                </span>
               </div>
             </div>
             <div class="story-option">
               <div class="option-icon">   
-                <ng-template #popContent><span style="cursor:pointer;" (click)="deletePost(story)" >Delete</span> </ng-template>               
+                <ng-template #popContent><span style="cursor:pointer;font-size: .9em;" (click)="deletePost(story)" >Delete</span> </ng-template>               
                 <i [ngbPopover]="popContent" [popoverTitle]="" style="color:grey;" class="fas fa-ellipsis-h"></i>              
               </div>
             </div>   

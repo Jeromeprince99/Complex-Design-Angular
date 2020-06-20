@@ -2,7 +2,7 @@
 .nav-bar{
     background-color:  #4267b2;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 12px;
+    padding: 5px;
     margin:0px;
     color: #fff;
     font-weight: normal;
@@ -17,28 +17,35 @@
         display: flex;
         flex-direction: row;
         .logo{
-            font-size: 20px;
+            font-size: .7em;
             font-weight: bold;
             line-height: 31px;
             margin-left: 12px;
+            cursor:pointer;
+        }
+        .logo-sm{
+            font-size: 1em;
+            font-weight: bold;
+            line-height: inherit;
+            margin: 0px 35px 0px 12px;
+            cursor:pointer;
+            display:none;
         }
         .search-bar{
+            font-size: .7em;
             margin:3px;
             display:flex;
             flex-wrap: nowrap;
-            margin: 0px 0px 0px 20px;
+            margin: auto 0px auto 20px;
             .search-wrapper{
-                background-color: white;
-                width: 20px;
-                line-height: 21px;
+                background-color: #dfe3ee;
                 cursor: pointer;
                 display: inline-block;
                 text-align: center;
-                border: 0.1px solid rgba(0,0,0,0.4);
-                padding: 0px 5px 7px 5px;
-                height: 22px;
+                padding: 1px 7px 1px 7px;
+                border-radius: 0px 2px 2px 0px;
                 .fa{
-                    font-size:15px!important;
+                    font-size: 1em!important;
                 }
             }
             .search-wrapper:hover{
@@ -53,8 +60,8 @@
         display: flex;
         flex-direction: row;
         .notifications-wrapper{
-            margin: 4px 35px 0px 0px;           
-            
+            margin: auto 35px auto 0px;          
+            line-height: initial;
             .unread-msg-no-placeholder{
                 cursor: pointer;
                 width: fit-content;
@@ -62,22 +69,23 @@
                 border-radius: 4px;
                 background-color: red;
                 position: absolute;
-                transform: translate(-10px, -9px);
-                line-height: 18px;
+                transform: translate(-10px, -2px);
+                line-height: 12px;
                 text-align: center;
-                font-size: 18px;
-                padding: 2px 5px;
+                font-size: .7em;
+                padding: 2px 3px;
+                font-weight: bold;
             }
             .fa{
                 cursor: pointer;
-                font-size: 28px;
+                font-size: 1em;
             }
         }
         .notification-box-wrapper{
             position: absolute;
             right: 100px;
-            top: 50px;
-            width: 300px;
+            top: 40px;
+            width:250px;
             overflow: auto;
             border-radius: 5px;
             max-height: 400px;
@@ -97,21 +105,21 @@
                     border-bottom: 1px solid rgba(0,0,0,0.2);
                     .icon{
                         img{
-                            width: 40px;
-                            height: 40px;
+                            width: 30px;
+                            height: 30px;
                             border-radius: 20px;
                             margin: 10px;
                             border: 1px solid rgba(0,0,0,0.2);
                         }
                     }
                     .message{
-                        margin: 7px 20px 7px 7px;
+                        margin: 4px 10px 4px 5px;
                         .content{
-                            font-size: 18px;
+                            font-size: .8em;
                             font-weight: 500;
                         }
                         .timestamp{
-                            font-size: 16px;
+                            font-size: .65em;
                             font-weight: 400;
                         }
                     }
@@ -122,16 +130,16 @@
             }
         }
         .profile-wrapper{
-            width: 30px;
-            height: 30px;
-            border-radius: 15px;
+            width: 1.2em;
+            height: 1.2em;
+            border-radius: .6em;
             background-color: white;
             color: blue;
-            font-size: 22px;
+            font-size: 1em;
             text-align: center;
-            margin: 4px 30px 0px 0px;
-            
+            margin: auto 35px auto 0px;
             cursor: pointer;
+            line-height: initial;
             .profile-placeholder{
 
             }
@@ -139,7 +147,7 @@
     }
 }
 .section{
-    margin: 58px 0px 0px 0px;
+    margin: 40px 0px 0px 0px;
     position: absolute;
     width: 100%;
     display: flex;
@@ -151,42 +159,42 @@
         .profile-photo-plus-name{
             display: flex;
             flex-wrap: nowrap;
+            height: fit-content;
+            margin: 29px 10px 0px 15px;
             .profile-photo{
-                width: 60px;
-                height: 60px;
-                margin: 30px 10px 30px 30px;
+                width: 2.2em;
+                height: 2.2em;
                 background-color: darkgray;
-                    border-radius: 30px;
+                border-radius: 1em;
                 .fa{
-                    font-size: 50px;    
+                    font-size: 2em;
                     color: white;
                     text-align: center!important;
                     display: block;
                     text-align: center;
-                    line-height: 60px;
+                    line-height: initial;
                 }
             }
             .profile-name{
                 color: rgba(0,0,0,0.9);
-                font-size: 18px;
+                font-size: .8em;
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                margin: auto 0px;
-                line-height: 60px
-
+                margin: auto 0px auto 10px;
+                line-height: initial;
             }            
         }
         .feature-container{
-            margin: 0px 0px 10px 30px;
+            margin: 0px 0px 10px 15px;
             .feature-heading{
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 color: grey;
-                margin: 0px 0px 10px 0px;
                 display: block;
-                font-size: 20px;
+                font-size: .8em;
+                margin: 20px 0px 0px 0px;
             }
             .feature-list{
                 .list-item{
-                    padding: 1px 5px 5px 8px;
+                    padding: 0px 5px 0px 0px;
                     display: flex;
                     flex-wrap: nowrap;
                     cursor: pointer;
@@ -194,12 +202,13 @@
                     .item-icon{
                         text-align: center;
                         width: 30px;
-                        padding-right: 10px;
-                        font-size: 30px;
+                        font-size: 1em;
+                        height: 30px;
+                        padding: 5px;
                     }
                     .item-name{
                         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                        font-size: 18px;
+                        font-size: .7em;
                         margin: 0px auto 0px 10px;
                         line-height: 35px;
                     }
@@ -237,13 +246,13 @@
             display: flex;
             background-color: #3b5998;
             color: #f7f7f7;
-            border-radius: 10px;
-            padding: 5px 10px 8px 10px;
+            border-radius: 6px;
+            padding: 5px 12px 5px 5px;
             text-align: center;
-            font-size: 20px;
+            font-size: .8em;
             font-weight: 600;
-            top:300px;
-            transform: translateX(-80px);
+            top: 300px;
+            transform: translateX(-50%);
         }
         .create-post-container{
             border: 1px solid rgba(0,0,0,0.09);
@@ -253,24 +262,28 @@
                 background-color: #f7f7f7;
                 padding: 5px 0px 5px 10px;
                 border-bottom: 1px solid rgba(0,0,0,0.09);
+                font-size: 0.9em;
+                font-weight: 600;
             }
             .body{
                 background-color: white;
                 display: flex;
                 border-bottom: 1px solid rgba(0,0,0,0.09);
                 .profile-photo{
-                    width: 75px;
-                    height: 60px;
+                    border-radius: 1.2em;
+                    width: 2.4em;
+                    height: 2.4em;
                     margin: 20px 20px 30px 20px;
                     background-color: darkgray;
                     display: inline-block;
-                    border-radius: 30px;
+                    
                     .fa{
-                        font-size: 50px;
+                        font-size: 2.4em;
                         color: white;
                         text-align: center !important;
                         display: block;
                         line-height: 60px;
+                        width: inherit;
                     }
                 }
                 .writing-space-area{
@@ -282,8 +295,11 @@
                         height: 112px;
                         color: grey;
                         border: none;
-                        font-size: 18px;
-                        padding: 10px 0px;
+                        font-size: .9em;
+                        padding: 20px 10px;
+                    }
+                    textarea:focus {
+                        outline: none;
                     }
                 }
             }
@@ -295,17 +311,18 @@
                     background-color: #f7f7f7;
                     border-radius: 20px;
                     margin: 5px 8px 5px 8px;
-                    line-height: 30px;
+                    line-height: 20px;
                     padding: 0px 5px;
                     cursor: pointer;
                     display: flex;
+                    height: fit-content;
                     .option-icon{
-                        font-size: 25px;
+                        font-size: 1.2em;
                         margin: 5px;
                     }
                     .option-name{
                         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                        font-size: 18px;
+                        font-size: .8em;
                         margin: 4px 10px 3px 5px;
                         font-weight: 500;
                         cursor: pointer;
@@ -318,14 +335,14 @@
                     background-color: #f7f7f7;
                     border-radius: 20px;
                     margin: 5px 8px 5px auto;
-                    line-height: 40px;
-                    padding: 0px 10px;
+                    line-height: 20px;
+                    padding: 5px 10px;
                     cursor: pointer;
                     display: flex;
                     font-weight: 500;
-                    font-size: 18px;
+                    font-size: .8em;
                 }
-                .post-button:hover,.option:hover{
+                .post-button:hover,.ophover:hover{
                     background-color: #dfe3ee;
                 }
             }
@@ -342,18 +359,20 @@
                 .header{
                     display: flex;
                     .profile-photo{
-                        width: 60px;
-                        height: 60px;
+                        border-radius: 1.2em;
+                        width: 2.4em;
+                        height: 2.4em;
                         margin: 20px 20px 30px 20px;
                         background-color: darkgray;
                         display: inline-block;
-                        border-radius: 30px;
+                        
                         .fa{
-                            font-size: 50px;
+                            font-size: 2.4em;
                             color: white;
                             text-align: center !important;
                             display: block;
                             line-height: 60px;
+                            width: inherit;
                         }
                     }
                     .name-and-time-placeholder{
@@ -361,11 +380,11 @@
                         margin: auto 0px;
                         .profile-name{
                             color: #3b5998;
-                            font-size: 20px;
+                            font-size: .85em;
                             font-weight: bold;
                         }
                         .time-stamp{
-                            font-size: 17px;
+                            font-size: .7em;
                             color: grey;
                             font-weight: 700;
                         }
@@ -383,12 +402,13 @@
                 .body{
                     margin: 0px 20px 20px 20px;
                     padding: 0px;
+                    font-size: .8em;
                 }
                 .image-space-area{
                     img{
                         width: -webkit-fill-available;
                         max-width: 100%;
-                        max-height: 100%;
+                        max-height: 100%;                       
                     }
                 }
             }
@@ -399,39 +419,40 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 18px;
         position: sticky;
-        height: 313px;
+        height: fit-content;
         top: 0px;
         .story-option-container{
             margin: 20px 20px 0px 20px;
             background-color: white;
             border: 1px solid rgba(0,0,0,0.09);
-            padding: 20px;
+            padding: 10px;
             .header{
-                font-size: 18px;
+                font-size: .9em;
                 font-weight: 600;
-                margin: 0px 0px 10px 0px;
             }
             .story-item{
                 display: flex;
                 .icon{
                     cursor: pointer;
+                    width: 2.5em;
+                    height: 2.5em;
+                    border-radius: 25px;
+                    margin: 10px 10px 5px 0px;
                     img{
-                        border-radius: 25px;
-                        width: 50px;
-                        height: 50px;
-                        margin: 10px 10px 5px 0px;
+                        width: 100%;
+                        height: 100%;
                     }
                 }
                 .content{
                     cursor: pointer;
-                    height: 60px;
-                    padding-top: 15px;
+                    margin: auto 0px;
                     .item-title{
                         color: #3b5998;
                         font-weight: bold;
+                        font-size:.8em;
                     }
                     .item-content{
-                        font-size: 16px;
+                        font-size: .7em;
                         color: rgba(0,0,0,0.9);
                         font-weight: 400;
                     }
@@ -441,9 +462,27 @@
     }
 }
 
-@media only screen and (max-width:620px){
+@media only screen and (max-width:650px){
     .search-bar{
         display: none!important;
+    }
+}
+
+@media only screen and (max-width:430px){
+    .logo{
+        display: none!important;
+    }
+    .logo-sm{
+        display:block!important;
+    }
+}
+
+@media only screen and (max-width:376px){
+    .socket-large{
+        display:none;
+    }
+    .socket-short{
+        display: block!important;
     }
 }
 
@@ -476,4 +515,42 @@
     margin: 0px;
     max-width: 100%;
     max-height: 100%;
+    margin: 40px 0px;
+}
+
+.enable-socket-btn-wrapper{
+    cursor: pointer;
+    background: #dfe3ee;
+    color: rgba(0,0,0,0.8);
+    border-radius: 3px;
+    padding: 2px 10px;
+    height: fit-content;
+    margin: auto 40px auto 0px;
+    text-align: center;
+    font-size: .7em;
+    .enable-socket-btn{
+
+        .enable-socket{
+    
+        }
+        .disable-socket{
+    
+        }
+    }
+}
+
+.enable-socket-btn-wrapper:hover{
+    background: #f7f7f7;
+}
+
+iframe {
+    width: -webkit-fill-available;
+    max-height: 300px;
+}
+
+
+@media only screen and (min-width:900px){
+    iframe {
+        max-height: 500px;
+    }
 }

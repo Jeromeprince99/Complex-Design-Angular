@@ -5,8 +5,11 @@ This website is slightly similar to facebook live news feed wall page but very l
 This project frontend was developed using Angular 9.
 
 UI Screenshots -> 
+
 ![screenshot1](https://github.com/Jeromeprince99/Complex-Design-Angular/blob/master/screenshots/Screenshot1.png)
+
 ![screenshot2](https://github.com/Jeromeprince99/Complex-Design-Angular/blob/master/screenshots/Screenshot2.png)
+
 ![screenshot3](https://github.com/Jeromeprince99/Complex-Design-Angular/blob/master/screenshots/Screenshot3.png)
 
 ## Development server

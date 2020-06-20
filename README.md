@@ -2,6 +2,8 @@
 
 This website is slightly similar to facebook live news feed wall page but very limited in functionality.
 
+The website is running live in this URL : https://complex-design-angular.web.app/
+
 This project frontend was developed using Angular 9.
 
 UI Screenshots -> 
